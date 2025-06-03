@@ -129,7 +129,7 @@ public class SpawnManager : MonoBehaviour {
     public GameObject SpawnItem(string itemName, Vector3 position, Quaternion rotation) {
         if (itemName == null) { return null; }
         if (itemPrefabs.TryGetValue(itemName, out GameObject prefab) && prefab != null) {
-            position.y += 0.25f; // Adjust the height to avoid clipping into the ground
+            position.y += 0.25f; 
             GameObject spawned = Instantiate(prefab, position, rotation);
             Debug.Log($"Spawned {itemName}(s) at {position}");
             return spawned;
@@ -142,7 +142,7 @@ public class SpawnManager : MonoBehaviour {
     public GameObject SpawnTree(string treeType, Vector3 position, Quaternion rotation) {
         if (treeType == null) { return null; }
         if (treePrefabs.TryGetValue(treeType, out GameObject prefab) && prefab != null) {
-            position.y += 0.25f; // Adjust the height to avoid clipping into the ground
+            position.y += 0.25f; 
             GameObject spawned = Instantiate(prefab, position, rotation);
             Debug.Log($"Spawned {treeType}(s) at {position}");
             return spawned;
@@ -164,10 +164,10 @@ public class SpawnManager : MonoBehaviour {
     //     foreach (GameObject tree in trees) {
     //         for (int i = 0; i < 2; i++) {
     //             GameObject treeNew = Instantiate(tree, GetRandomPosition(0f), tree.transform.rotation);
-    //             GameObject trunkObstacle = new("TrunkObstacle"); //Adds a child game object to the tree with a nav mesh obstacle
+    //             GameObject trunkObstacle = new("TrunkObstacle"); 
     //             trunkObstacle.transform.parent = treeNew.transform;
     //             trunkObstacle.AddComponent<NavMeshObstacle>().carving = true;
-    //             trunkObstacle.transform.localPosition = new Vector3(0, 1f, 0);  // adjust height as needed
+    //             trunkObstacle.transform.localPosition = new Vector3(0, 1f, 0);  
     //             trunkObstacle.transform.localScale = new Vector3(1f, 2f, 1f);
     //             trunkObstacle.transform.localRotation = Quaternion.identity;
     //             treeNew.GetComponent<TreeScript>().trunkObstacle = trunkObstacle;
