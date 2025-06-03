@@ -185,7 +185,6 @@ public class Inventory : MonoBehaviour
                         RemoveItemFromAnywhere(item, slot, true);
                     }
                 }
-                // Stop if we've collected enough
                 if (countRemaining <= 0) {
                     break;
                 }
@@ -212,7 +211,6 @@ public class Inventory : MonoBehaviour
 
     public Sprite FindTextureByName(string textureName) { //Finds the corresponding texture for the ui matching the object type
         foreach (Sprite obj in objectImages) {
-            // Remove any instance-specific suffixes like " (Instance)"
             string cleanName = obj.name.Replace(" (Instance)", "");
             if (cleanName == textureName) {
                 return obj;
